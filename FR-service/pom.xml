@@ -1,0 +1,162 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>cn.xiangyu.service</groupId>
+	<artifactId>finereport-service</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>finereport-service</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<junit-version>3.8.1</junit-version>
+		<jdk.version>1.7</jdk.version>
+		<spring.version>4.0.3.RELEASE</spring.version>
+		<hibernate.version>4.3.5.Final</hibernate.version>
+		<cxf.version>3.1.11</cxf.version>
+
+		<resource-dir>src/main/resources</resource-dir>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit-version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-core</artifactId> 
+			<version>${spring.version}</version> </dependency> <dependency> <groupId>org.springframework</groupId> 
+			<artifactId>spring-context</artifactId> <version>${spring.version}</version> 
+			</dependency> -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.apache.cxf</groupId> <artifactId>cxf-bundle</artifactId> 
+			<version>${cxf.version}</version> <scope>compile</scope> <exclusions> <exclusion> 
+			<artifactId>spring-jms</artifactId> <groupId>org.springframework</groupId> 
+			</exclusion> <exclusion> <artifactId>aopalliance</artifactId> <groupId>aopalliance</groupId> 
+			</exclusion> <exclusion> <artifactId>spring-aop</artifactId> <groupId>org.springframework</groupId> 
+			</exclusion> <exclusion> <artifactId>spring-beans</artifactId> <groupId>org.springframework</groupId> 
+			</exclusion> <exclusion> <artifactId>spring-core</artifactId> <groupId>org.springframework</groupId> 
+			</exclusion> <exclusion> <artifactId>spring-context</artifactId> <groupId>org.springframework</groupId> 
+			</exclusion> <exclusion> <artifactId>spring-expression</artifactId> <groupId>org.springframework</groupId> 
+			</exclusion> <exclusion> <artifactId>spring-asm</artifactId> <groupId>org.springframework</groupId> 
+			</exclusion> <exclusion> <artifactId>spring-tx</artifactId> <groupId>org.springframework</groupId> 
+			</exclusion> <exclusion> <artifactId>geronimo-javamail_1.4_spec</artifactId> 
+			<groupId>org.apache.geronimo.specs</groupId> </exclusion> <exclusion> <artifactId>velocity</artifactId> 
+			<groupId>org.apache.velocity</groupId> </exclusion> <exclusion> <artifactId>antlr</artifactId> 
+			<groupId>antlr</groupId> </exclusion> <exclusion> <artifactId>jetty-http</artifactId> 
+			<groupId>org.eclipse.jetty</groupId> </exclusion> <exclusion> <artifactId>jetty-io</artifactId> 
+			<groupId>org.eclipse.jetty</groupId> </exclusion> <exclusion> <artifactId>jetty-security</artifactId> 
+			<groupId>org.eclipse.jetty</groupId> </exclusion> <exclusion> <artifactId>jetty-continuation</artifactId> 
+			<groupId>org.eclipse.jetty</groupId> </exclusion> <exclusion> <artifactId>jetty-util</artifactId> 
+			<groupId>org.eclipse.jetty</groupId> </exclusion> <exclusion> <artifactId>jetty-server</artifactId> 
+			<groupId>org.eclipse.jetty</groupId> </exclusion> <exclusion> <artifactId>woodstox-core-asl</artifactId> 
+			<groupId>org.codehaus.woodstox</groupId> </exclusion> <exclusion> <artifactId>stax2-api</artifactId> 
+			<groupId>org.codehaus.woodstox</groupId> </exclusion> <exclusion> <artifactId>xml-resolver</artifactId> 
+			<groupId>xml-resolver</groupId> </exclusion> <exclusion> <artifactId>geronimo-jaxws_2.2_spec</artifactId> 
+			<groupId>org.apache.geronimo.specs</groupId> </exclusion> <exclusion> <artifactId>geronimo-servlet_3.0_spec</artifactId> 
+			<groupId>org.apache.geronimo.specs</groupId> </exclusion> <exclusion> <artifactId>geronimo-jms_1.1_spec</artifactId> 
+			<groupId>org.apache.geronimo.specs</groupId> </exclusion> <exclusion> <artifactId>mina-core</artifactId> 
+			<groupId>org.apache.mina</groupId> </exclusion> <exclusion> <artifactId>js</artifactId> 
+			<groupId>rhino</groupId> </exclusion> <exclusion> <artifactId>javax.ws.rs-api</artifactId> 
+			<groupId>javax.ws.rs</groupId> </exclusion> <exclusion> <artifactId>oauth-provider</artifactId> 
+			<groupId>net.oauth.core</groupId> </exclusion> <exclusion> <artifactId>oauth</artifactId> 
+			<groupId>net.oauth.core</groupId> </exclusion> <exclusion> <artifactId>ehcache-core</artifactId> 
+			<groupId>net.sf.ehcache</groupId> </exclusion> <exclusion> <artifactId>opensaml</artifactId> 
+			<groupId>org.opensaml</groupId> </exclusion> <exclusion> <artifactId>openws</artifactId> 
+			<groupId>org.opensaml</groupId> </exclusion> <exclusion> <artifactId>xmltooling</artifactId> 
+			<groupId>org.opensaml</groupId> </exclusion> <exclusion> <artifactId>joda-time</artifactId> 
+			<groupId>joda-time</groupId> </exclusion> <exclusion> <artifactId>asm</artifactId> 
+			<groupId>asm</groupId> </exclusion> <exclusion> <groupId>org.apache.httpcomponents</groupId> 
+			<artifactId>httpclient</artifactId> </exclusion> <exclusion> <groupId>org.apache.httpcomponents</groupId> 
+			<artifactId>httpcore</artifactId> </exclusion> </exclusions> </dependency> -->
+		
+		<dependency>
+			<groupId>com.xy</groupId>
+			<artifactId>fndsec</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+
+	<!-- build details -->
+	<build>
+		<finalName>finereport-service</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<url>http://localhost:8090/manager/text</url>
+					<server>tomcatServer</server>
+					<path>/${project.build.finalName}</path>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<webResources>
+						<resource>
+							<directory>${resource-dir}</directory>
+							<targetPath>WEB-INF/classes</targetPath>
+							<filtering>true</filtering>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
